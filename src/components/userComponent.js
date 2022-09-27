@@ -2,6 +2,8 @@ import { BaseLogger, ElasticLogger, MongoLogger } from "../crossCuttingConcerns/
 import Customer from "../models/customer.js"
 import User from "../models/user.js"
 import UserService from "../services/userService.js"
+//import App from "../App.js"
+import functions from "../functions.js"
 
 console.log("User component yüklendi")
 

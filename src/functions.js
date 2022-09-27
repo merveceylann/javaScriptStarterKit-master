@@ -1,9 +1,17 @@
+// console.log("Sepete Eklendi");
+// console.log("Sepete Eklendi");
+// console.log("Sepete Eklendi");
+// console.log("Sepete Eklendi");
+//Do not repeat yourself
+
 function addToCart(quantity,productName="Elma") {
     console.log("Sepete eklendi : ürün : " 
-    + productName + " adet : " + quantity)
+    + productName + " / adet : " + quantity)
 }
+//buradaki "Elma" default deger
 
 //addToCart()
+//addToCart("Portakal")
 addToCart(10)
 //addToCart(15)
 
@@ -20,7 +28,8 @@ let sayHello2 = function () {
 sayHello2();
 
 function addToCart2(productName, quantity, unitPrice) {
-    
+    //console.log(productName,quantity,unitPrice);
+    //bu cok tercih edilmemeli, cunku parametreler karistirilabilir.
 }
 
 addToCart2("Elma",5,10)
@@ -28,6 +37,7 @@ addToCart2("Armut", 2, 20)
 addToCart2("Limon",3,15)
 
 let product1 = {productName:"Elma", unitPrice:10, quantity:5}
+//encapsulation
 
 function addToCart3(product) {
     console.log("Ürün : "+product.productName)
@@ -42,18 +52,21 @@ let product2 = {productName:"Elma", unitPrice:10, quantity:5}
 let product3 = {productName:"Elma", unitPrice:10, quantity:5}
 product2 = product3
 product2.productName = "KARPUZ"
-console.log(product3.productName)
+console.log(product3.productName) //referans tip, adresi atiyoruz
+//state management
+
 
 let sayi1 = 10
 let sayi2 = 20
 sayi1 = sayi2
 sayi2 = 100
-console.log(sayi1)
+console.log(sayi1) //deger tip
 
-function addToCart4(products) {
+function addToCart4(x) {
     console.log(products)
-}
+} //scope onemli
 
+//arrayde obje de tutabiliriz
 let products = [
     {productName:"Elma", unitPrice:10, quantity:5},
     {productName:"Armut", unitPrice:10, quantity:5},
@@ -70,16 +83,17 @@ function add(bisey,...numbers) { //rest
     console.log(total)
     console.log(bisey)
 }
+//rest operatorun disinda baska operator varsa basa yazmalıyız
 
 add(20,30)
-//add(20,30, 40)
-//add(20,30, 40, 50)
+add(20,30, 40)
+add(20,30, 40, 50)
 
 let numbers = [30,10,500,600,120]
-//console.log(...numbers)
+//console.log(...numbers) //spreat ayristirir rest toparlar
 console.log(Math.max(...numbers))
 
-let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]] = [
+let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri,marmaraSehirleri]] = [
     {name:"İç Anadolu", population:"20M"},
     {name:"Marmara", population:"30M"},
     {name:"Karadeniz", population:"10M"},
@@ -90,9 +104,11 @@ let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]] = [
     ]
 ]
 
-// console.log(icAnadolu.name)
-// console.log(icAnadolu.population)
+console.log(icAnadolu.name)
+console.log(icAnadolu.population)
 console.log(icAnadoluSehirleri)
+console.log(marmaraSehirleri)
+
 
 let newProductName, newUnitPrice, newQuantity
 ({productName:newProductName, unitPrice:newUnitPrice, quantity:newQuantity } 

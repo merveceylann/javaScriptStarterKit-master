@@ -1,5 +1,5 @@
 console.log("Merhaba Kodlama.io")
-
+//npm run dev
 //JS type safe değildir
 let dolarBugun = 9.30
 
@@ -7,6 +7,7 @@ let dolarDun = 9.20
 dolarDun = "9.20"
 {
     let dolarDun = 9.10
+    //bunu gormez cunku ayni scopeta degil
 }
 
 console.log(dolarDun)
