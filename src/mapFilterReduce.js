@@ -8,27 +8,26 @@ let cart = [
 ]
 
 console.log("<ul>")
+//arrayi tek tek dolasiyor. iterate ediyor.
 cart.map(product=>{
-    console.log("<li>"+product.productName + " : " 
-    + product.unitPrice * product.quantity+"</li>")
-})
+    console.log("<li>" + product.productName + " : " 
+    + product.unitPrice * product.quantity + "</li>")
+}) 
 console.log("</ul>")
 
-let total = cart.reduce((acc,product)=>acc+ product.unitPrice * product.quantity,0)
+//dongu 0 = accnin ilk degeri
+let total = cart.reduce((acc,product)=>acc + product.unitPrice * product.quantity ,0)
 
-//23.00 Dersteyiz
 console.log(total)
 
-
-let quantityOver2 = cart.filter(product=>product.quantity>2)
+//filtreleme icin kullanilir(linqu gibi). yepyeni bir array olusturur.
+let quantityOver2 = cart.filter(product=>product.quantity > 2 & product.unitPrice < 4000)
 
 console.log(quantityOver2)
 
 function addToCart(sepet) {
     sepet.push({id:7, productName:"Ruhsat", quantity:1, unitPrice:20})
 }
-
-
 
 addToCart(cart)
 
@@ -41,5 +40,3 @@ function sayiTopla(number) {
 }
 sayiTopla(sayi)
 console.log(sayi)
-
-//23.00 Dersteyiz

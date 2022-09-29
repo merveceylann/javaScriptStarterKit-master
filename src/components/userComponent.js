@@ -3,7 +3,8 @@ import Customer from "../models/customer.js"
 import User from "../models/user.js"
 import UserService from "../services/userService.js"
 //import App from "../App.js"
-import functions from "../functions.js"
+//import functions from "../functions.js"
+//import mapFilter from "../mapFilterReduce.js"
 
 console.log("User component yüklendi")
 
@@ -16,10 +17,7 @@ userService.add(user1)
 userService.add(user2)
 
 //console.log(userService.list())
-//console.log(userService.getById(2))
-
-
-
+console.log(userService.getById(2))
 
 let customer = {id:1, firstName:"Engin"}
 
@@ -40,4 +38,3 @@ console.log(userService.customers)
 console.log(userService.employees)
 console.log(userService.errors)
 console.log(userService.getCustomersSorted())
-//22.00 Dersteyiz

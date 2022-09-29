@@ -1,13 +1,25 @@
 import { users } from "../data/users.js"
 import DataError from "../models/dataError.js"
 
+// export default class UserService{
+//     add(id,name,phone){
+//         console.log("kullanıcı eklendi" + user)
+//     }
+// } //single responsebility olmalı
+
+
 export default class UserService {
     constructor(loggerService) {
+        //this.users = []
         this.employees = []
         this.customers = []
         this.errors = []
         this.loggerService = loggerService
     }
+
+    // getById(id){
+    //     return this.users.find(u => u.id === id)
+    // }
 
     load() {
         for (const user of users) {
@@ -92,16 +104,16 @@ export default class UserService {
     }
 
     getCustomerById(id) {
-        return this.customers.find(u=>u.id ===id)
+        return this.customers.find(u => u.id === id)
     }
 
-    getCustomersSorted(){
-        return this.customers.sort((customer1,customer2)=>{
-            if(customer1.firstName>customer2.firstName){
+    getCustomersSorted() {
+        return this.customers.sort((customer1, customer2) => {
+            if (customer1.firstName > customer2.firstName) {
                 return 1;
-            }else if(customer1.firstName===customer2.firstName){
+            } else if (customer1.firstName === customer2.firstName) {
                 return 0;
-            }else{
+            } else {
                 return -1
             }
         })
